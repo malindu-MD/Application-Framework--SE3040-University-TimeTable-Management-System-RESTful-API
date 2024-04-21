@@ -1,0 +1,787 @@
+{
+	"info": {
+		"_postman_id": "6b9bebfd-8b54-4336-9943-334ba09216ba",
+		"name": "TimeTableManagementAPI",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "26559127"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "User Register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\r\n      \"firstName\":\"Ananda\",\r\n      \"lastName\":\"Sooriyaarachchi\",\r\n      \"email\":\"ananda@gmail.com\",\r\n      \"mobile\":\"0773050254\",\r\n      \"password\":\"KAmani@6088\",\r\n      \"role\":\"Faculty\"\r\n\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5000/api/user/register",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"user",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "User Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\r\n     \r\n      \"email\":\"ananda@gmail.com\",\r\n     \r\n      \"password\":\"KAmani@6088\"\r\n\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5000/api/user/login",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"user",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Users",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:5000/api/user/allusers",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"user",
+								"allusers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get A One User",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:5000/api/user/user/65fb1ea95104104e21fc4874",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"user",
+								"user",
+								"65fb1ea95104104e21fc4874"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update A User",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\r\n     \r\n    \r\n      \"password\":\"KAmani@6088\"\r\n     \r\n\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5000/api/user/user/65fb1ea95104104e21fc4874",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"user",
+								"user",
+								"65fb1ea95104104e21fc4874"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete A User",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:5000/api/user/user/65fc209c94142df3d989e7fc",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"user",
+								"user",
+								"65fc209c94142df3d989e7fc"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Refresh User Token",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:5000/api/user/refreshtoken",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"user",
+								"refreshtoken"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "User LogOut",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:5000/api/user/logout",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"user",
+								"logout"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Course",
+			"item": [
+				{
+					"name": "Create A Course",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1ZmMyNDA0ZTg5NTY5MGZhYzdmOWVmNSIsInJvbGUiOiJTdHVkZW50IiwiaWF0IjoxNzExMDI0MTU5LCJleHAiOjE3MTExMTA1NTl9.fmVu2z4vcJmdVXjcLCxqNxelvQ8I0ffxIAuLflNuOa4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": " {\r\n\r\n       \"name\":\"DataBase Managment System\",\r\n       \"code\":\"IT2109\",\r\n       \"description\":\"SQL as a Programming language\",\r\n       \"credits\":4\r\n       \r\n\r\n }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5000/api/course/create",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"course",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get A One Course",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:5000/api/course/65fc0709ee833a7a362e768e",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"course",
+								"65fc0709ee833a7a362e768e"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Courses",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:5000/api/course/",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"course",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update A Course",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": " {\r\n\r\n       \"name\":\"Object Oriented Design\",\r\n       \"code\":\"IT2312\",\r\n       \"description\":\"C++  as a Programming language\",\r\n       \"credits\":4\r\n       \r\n\r\n }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5000/api/course/65fc0ef44820d9458a400cca",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"course",
+								"65fc0ef44820d9458a400cca"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete A Course",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:5000/api/course/65fc277155a664a8d5806b0d",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"course",
+								"65fc277155a664a8d5806b0d"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "assign Faculty to courses",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1ZmMyNDA0ZTg5NTY5MGZhYzdmOWVmNSIsInJvbGUiOiJBZG1pbiIsImlhdCI6MTcxMTAyNzc4OSwiZXhwIjoxNzExMTE0MTg5fQ.f3WIYd341gL_M1F6xEPNnGuLVXDu_1jfcViVC6icca0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n     \r\n    \"facultyId\":\"65fb1ea95104104e21fc4874\"\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5000/api/course/course/65fc0709ee833a7a362e768e",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"course",
+								"course",
+								"65fc0709ee833a7a362e768e"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Room",
+			"item": [
+				{
+					"name": "Create A Room",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\r\n  \"roomName\":\"H432\",\r\n  \"capacity\":60\r\n\r\n\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5000/api/room/create",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"room",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Gell all Rooms",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:5000/api/room/",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"room",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get a Room",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:5000/api/room/65fc953f760ba4bb8deb7aaa",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"room",
+								"65fc953f760ba4bb8deb7aaa"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Resource",
+			"item": [
+				{
+					"name": "Create A Resource",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\r\n       \"name\":\"Dell Laptop\",\r\n       \"itemCode\":\"L5437\"\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5000/api/resource/create",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"resource",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all Resource",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:5000/api/resource/",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"resource",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get A Resource",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:5000/api/resource/65fd372e1f76ca1fb2d9d593",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"resource",
+								"65fd372e1f76ca1fb2d9d593"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Booking",
+			"item": [
+				{
+					"name": "Create A  Booking",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\r\n     \"roomId\":\"65fc9553760ba4bb8deb7aae\",\r\n     \"resourceId\":\"65fd372e1f76ca1fb2d9d593\",\r\n     \"dayOfWeek\":\"Friday\",\r\n     \"type\":\"Class\",\r\n     \"startTime\": \"09:30 AM\",\r\n      \"endTime\": \"11:30 AM\"\r\n\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5000/api/booking/create",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"booking",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Cancle A Booking",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:5000/api/booking/65fd64fbc1573bc722ae6918",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"booking",
+								"65fd64fbc1573bc722ae6918"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Booking",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:5000/api/booking/",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"booking",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get a Booking",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:5000/api/booking/65fd64fbc1573bc722ae6918",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"booking",
+								"65fd64fbc1573bc722ae6918"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update A Booking",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "\r\n\r\n {\r\n      \r\n        \"roomId\": \"65fc953f760ba4bb8deb7aaa\",\r\n        \"resourceId\": \"65fd372e1f76ca1fb2d9d593\",\r\n        \"dayOfWeek\": \"Friday\",\r\n        \"type\": \"Class\",\r\n        \"startTime\": \"09:30 AM\",\r\n        \"endTime\": \"11:00 AM\",\r\n        \"__v\": 0\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5000/api/booking/65fd64fbc1573bc722ae6918",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"booking",
+								"65fd64fbc1573bc722ae6918"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "TimeTableSession",
+			"item": [
+				{
+					"name": "Create A TimeTable Session",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "\r\n\r\n{\r\n     \r\n    \r\n     \"dayOfWeek\":\"Monday\",\r\n     \"startTime\": \"09:30 AM\",\r\n     \"endTime\": \"11:30 AM\",\r\n     \"faculty\":\"65fb1ea95104104e21fc4874\",\r\n     \"location\":\"65fc9553760ba4bb8deb7aae\",\r\n     \"sessionStatus\":\"Scheduled\",\r\n     \"description\":\"Java C\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5000/api/timetablesession/create/65fc0709ee833a7a362e768e",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"timetablesession",
+								"create",
+								"65fc0709ee833a7a362e768e"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update TimeTable Session",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "\r\n\r\n{\r\n                \"dayOfWeek\": \"Monday\",\r\n                \"startTime\": \"09:30 AM\",\r\n                \"endTime\": \"11:30 AM\",\r\n                \"faculty\": \"65fb1ea95104104e21fc4874\",\r\n                \"location\": \"65fc9553760ba4bb8deb7aae\",\r\n                \"sessionStatus\": \"Postponed\",\r\n                \"locationBookID\": \"65fe8b073828305fafda6ed2\",\r\n                \"description\": \"Basic C\"\r\n            }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5000/api/timetablesession/update/65fc0709ee833a7a362e768e/65fe8b073828305fafda6ed4",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"timetablesession",
+								"update",
+								"65fc0709ee833a7a362e768e",
+								"65fe8b073828305fafda6ed4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete A  TimeTable Session",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:5000/api/timetablesession/delete/65fc0709ee833a7a362e768e/65febf9d4f515c31354c516b",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"timetablesession",
+								"delete",
+								"65fc0709ee833a7a362e768e",
+								"65febf9d4f515c31354c516b"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All  TimeTable Session in Course",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:5000/api/timetablesession/all/65fc0709ee833a7a362e768e",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"timetablesession",
+								"all",
+								"65fc0709ee833a7a362e768e"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "StudnetCourseEnrollment",
+			"item": [
+				{
+					"name": "StudentCourseEnrollment",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "StudentCourseUnenrollment",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "GetAllEnrollStudentForCourse",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
